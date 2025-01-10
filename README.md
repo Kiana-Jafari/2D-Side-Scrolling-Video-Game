@@ -1,3 +1,3 @@
 ### 2D Side-Scrolling Video Game
 
-![Video Game Demo](https://github.com/Kiana-Jafari/2D-Side-Scrolling-Video-Game/blob/main/Demo.gif)
+<img src="https://github.com/Kiana-Jafari/2D-Side-Scrolling-Video-Game/blob/main/Demo.gif" alt="Alt Text" width="500" height="300" style="border-radius: 15px;">Video Game Demo</img>
