@@ -14,8 +14,8 @@ Here's what you can explore so far:
 
 A general overview of the project:
 
-- Designed and implemented a 2D game environment with animated character movement
-- Utilized p5.js and JavaScript for real-time rendering to create a dynamic, side-scrolling world with interactive animations
+- Designing and implementing a 2D game environment with animated character movement
+- Utilizing p5.js and JavaScript for real-time rendering to create a dynamic, side-scrolling world with interactive animations
 - Successfully delivering a functional game demo that showcases user experience and animation transitions
 
 Please note that the project is still in progress, but a short demo is available in the files section. You can also see a preview as provided below:
