@@ -12,6 +12,12 @@ Here's what you can explore so far:
 - **Mouse and keyboard interactions**: Supports mouse and keyboard interactions
 - **Virtual camera**: Supports a virtual camera
 
+A general overview of the project:
+
+- Designed and implemented a 2D game environment with animated character movement
+- Utilized p5.js and JavaScript for real-time rendering to create a dynamic, side-scrolling world with interactive animations
+- Successfully delivering a functional game demo that showcases user experience and animation transitions
+
 Please note that the project is still in progress, but a short demo is available in the files section. You can also see a preview as provided below:
 
 <img src='https://github.com/Kiana-Jafari/2D-Side-Scrolling-Video-Game/blob/main/Preview.png' alt='Video Game Demo'></img>
