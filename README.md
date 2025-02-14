@@ -20,6 +20,6 @@ A general overview of the project:
 
 Please note that the project is still in progress, but a short demo is available in the files section. You can also see a preview as provided below:
 
-<img src='https://github.com/Kiana-Jafari/2D-Side-Scrolling-Video-Game/blob/main/Preview.png' alt='Video Game Demo'></img>
+<img src='https://github.com/Kiana-Jafari/2D-Side-Scrolling-Video-Game/blob/main/scene.png' alt='Video Game Background'></img>
 
 Feel free to explore the code, test the demo, and modify the environment to make it your own. Perfect for anyone interested in learning game development and gamification basics! 🚀
