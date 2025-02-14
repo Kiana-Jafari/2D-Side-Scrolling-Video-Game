@@ -11,6 +11,7 @@ Here's what you can explore so far:
 - **Sprite grouping**: Supports grouping sprites
 - **Mouse and keyboard interactions**: Supports mouse and keyboard interactions
 - **Virtual camera**: Supports a virtual camera
+- **Sound Effects (SFX)**: Supports all the sounds that objects make in the game
 
 A general overview of the project:
 
