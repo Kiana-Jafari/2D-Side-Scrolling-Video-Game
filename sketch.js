@@ -19,8 +19,8 @@ let treesY;
 let cactus;
 let warning;
 
-let mountainsX;
-let mountainsY;
+let mountainX;
+let mountainY;
 
 let sun;
 let firstCloud;
@@ -45,7 +45,7 @@ let bonusSound;
 let fallingSound;
 let jumpSound;
 
-// Load the key and sounds here
+// Function to load the sounds
 function preload()
 {
 	soundFormats('mp3','wav');
@@ -145,6 +145,7 @@ function draw()
 
 		const isContact = enemies[i].checkContact(charX, charY);
 
+		// Reduce `lives` by one and restart the game, if the character is in contact with one of the enemies
 		if (isContact)
 		{
 			if (lives > 0)
@@ -174,7 +175,7 @@ function draw()
 	// Clouds
 	drawClouds();
 
-	// flagpole
+	// Flagpole
 	drawFlagpole();
 	if (flagpole.isReached == false)
 	{
@@ -191,7 +192,7 @@ function draw()
 	// Revert to settings as they were
 	pop();
 
-	// Score
+	// Display the current score
 	fill(0);
 	noStroke();
 	textFont('Melissa');
@@ -205,7 +206,7 @@ function draw()
 	textSize(20);
 	text('Lives: ' + lives, 15, 45);
 
-	// Game is over if `lives` is lees than 1
+	// Stop the background sound and make the game over if `live` is less than 1
 	if (lives < 1)
 	{
 		backgroundSound.stop();
@@ -243,6 +244,7 @@ function draw()
 	{
 		let isContact = false;
 
+		// Make the character stand on the platforms if it is in contact with them
 		for (let i = 0; i < platforms.length; i++)
 		{
 			if (platforms[i].checkContact(charX, charY))
@@ -269,7 +271,7 @@ function draw()
 
 function keyPressed()
 {
-	// Freeze the controls so that the character can no longer be moved once plummeting
+	// Once plummeting, freeze the controls so that the character can no longer move
 	if (isPlummeting)
 	{
 		return ;
@@ -277,12 +279,12 @@ function keyPressed()
 
 	else if (!flagpole.isReached == true && !lives < 1)
 	{
-		if (keyCode == 37)
+		if (keyCode == 37) // Arrow Left
 		{
 			isLeft = true;
 		}
 
-		if (keyCode == 39)
+		if (keyCode == 39) // Arrow Right
 		{
 			isRight = true;
 		}
@@ -298,12 +300,12 @@ function keyPressed()
 
 function keyReleased()
 {
-	if (keyCode == 37) // ArrowLeft
+	if (keyCode == 37) // Arrow Left
 	{
 		isLeft = false;
 	}
 	
-	else if (keyCode == 39) // ArrowRight
+	else if (keyCode == 39) // Arrow Right
 	{
 		isRight = false;
 	}
@@ -314,13 +316,14 @@ function keyReleased()
 	}
 }
 
+// Function to draw the clouds
 function drawClouds()
 {
 	// Clouds
 	for (let i = 0; i < firstCloud.length; i++)
 	// console.log(firstCloud.length == secondCloud.length) -> true
 	{
-		// Shadows
+		// Draw Shadows
 		fill(0, 0, 0, 50);
 		ellipse(
 			firstCloud[i].x_pos,
@@ -350,26 +353,28 @@ function drawClouds()
 	}
 }
 
+// Function to draw the mountains
 function drawMountains()
 {
 	// Mountains
-	for (let i = 0; i < mountainsX.length; i++)
+	for (let i = 0; i < mountainX.length; i++)
 	{
 		fill(200, 200, 200);
 		triangle(
-			mountainsX[i] - 100, mountainsY,
-			mountainsX[i] + 20, mountainsY - 300,
-			mountainsX[i] + 100, mountainsY);
+			mountainX[i] - 100, mountainY,
+			mountainX[i] + 20, mountainY - 300,
+			mountainX[i] + 100, mountainY);
 				
 		// Shadows
 		fill(128, 128, 128, 100);
 		triangle(
-			mountainsX[i] - 100, mountainsY,
-			mountainsX[i] + 5, mountainsY - 265,
-			mountainsX[i] + 100, mountainsY); // Offset y by a constant to make shadows
+			mountainX[i] - 100, mountainY,
+			mountainX[i] + 5, mountainY - 265,
+			mountainX[i] + 100, mountainY); // Offset `y` by a constant to make shadows
 	}
 }
 
+// Function to draw the warning sign
 function drawSign(t_warning)
 {
 	// Warning Sign
@@ -393,6 +398,7 @@ function drawSign(t_warning)
 	text('!', t_warning.x + 30, t_warning.y - 19);
 }
 
+// Function to draw the trees
 function drawTrees()
 {
 	// Trees
@@ -410,9 +416,10 @@ function drawTrees()
 	}
 }
 
+// Function to draw the Saguaro Cactus
 function drawCactus(t_cactus)
 {
-	// Saguaro Cactus
+	// Draw the Cactus
 	for (let i = 0; i < t_cactus.length; i++)
 	{
 		fill(34, 139, 34);
@@ -424,6 +431,7 @@ function drawCactus(t_cactus)
 	}
 }
 
+// Function to draw the sun
 function drawSun()
 {
 	// Sun
@@ -431,9 +439,10 @@ function drawSun()
 	ellipse(sun.x, sun.y, sun.width, sun.height);
 }
 
+// Function to draw the collectable
 function drawCollectable(t_collectable)
 {
-	// Collectable
+	// Draw the collectable if `isFound` is set to true
 	if (!t_collectable.isFound)
 	{
 		fill(255, 255, 0);
@@ -453,6 +462,7 @@ function drawCollectable(t_collectable)
 	}
 }
 
+// Function to collect the collectables
 function checkCollectable(t_collectable)
 {
 	if (abs(dist(charX, charY, t_collectable.x_pos, floorPos_y)) < 20)
@@ -463,6 +473,7 @@ function checkCollectable(t_collectable)
 	}
 }
 
+// Function to draw the collectable
 function drawCanyon(t_canyon)
 {
 	// Canyon
@@ -474,6 +485,7 @@ function drawCanyon(t_canyon)
 		400);
 }
 
+// Function to check the character contact with canyons
 function checkCanyon(t_canyon)
 {
 	// Detect when the character is over the canyon
@@ -499,6 +511,7 @@ function checkCanyon(t_canyon)
 	}
 }
 
+// Function to draw the flagpole
 function drawFlagpole()
 {
 	push();
@@ -522,11 +535,12 @@ function drawFlagpole()
 	pop();
 }
 
+// Function to check if the character reached the finish line
 function checkFlagpole()
 {
-	// Check if the player won the game
 	const dist = abs(charX - flagpole.x_pos);
 
+	// Check the character contact with the flagpole
 	if (dist < 15)
 	{
 		flagpole.isReached = true;
@@ -534,9 +548,10 @@ function checkFlagpole()
 	}
 }
 
+// Function to grant extra lives for the character
 function grantExtraLives(bonus)
 {
-	// Add extra live on the platforms
+	// Put extra live on the platforms
 	if (!bonus.touched)
 	{
 		textSize(32);
@@ -551,9 +566,10 @@ function grantExtraLives(bonus)
 	}
 }
 
+// Function to check the game lost
 function checkPlayerDie()
 {
-	// Decrease lives whenever the player loses the game
+	// Decrease `lives` whenever the player loses the game and restart the game
 	if (charY >= height)
 	{
 		lives --;
@@ -561,6 +577,7 @@ function checkPlayerDie()
 	}
 }
 
+// Function to handle platforms interaction and drawing
 function createPlatforms(x, y, length)
 {
 	const p = {
@@ -568,12 +585,14 @@ function createPlatforms(x, y, length)
 		y: y, 
 		length: length, 
 
+		// Method to draw the platform
 		draw: function()
 		{
 			fill(63, 42, 20);
 			rect(this.x, this.y, this.length, 20, 10, 10);
 		},
 
+		// Method to check platform contact
 		checkContact: function(gc_x, gc_y)
 		{
 			if (gc_x > this.x && gc_x < this.x + this.length)
@@ -593,6 +612,7 @@ function createPlatforms(x, y, length)
 	return p;
 }
 
+// Constructor function to handle the enemy interaction & rendering
 function Enemy(x, y, range)
 {
 	this.x = x;
@@ -602,6 +622,7 @@ function Enemy(x, y, range)
 	this.currentX = x;
 	this.value = 1;
 
+	// Limited movement for the enemy
 	this.update = function()
 	{
 		this.currentX += this.value;
@@ -617,6 +638,7 @@ function Enemy(x, y, range)
 		}
 	}
 
+	// Method to draw the enemy
 	this.drawEnemy = function(bodyHeight, neckHeight, radius)
 	{
 		this.update();
@@ -658,6 +680,7 @@ function Enemy(x, y, range)
 		ellipse(this.currentX + 15, ny + 20, 3, 3);
 	}
 
+	// Method to check the enemy contact
 	this.checkContact = function(gc_x, gc_y)
 	{
 		const distance = dist(gc_x, gc_y, this.currentX, this.y);
@@ -671,6 +694,7 @@ function Enemy(x, y, range)
 	}
 }
 
+// Function to display the game over message
 function gameOver()
 {
 	fill(255);
@@ -683,6 +707,7 @@ function gameOver()
 	noStroke();
 }
 
+// Function to initialize the variables and start the game
 function startGame()
 {
 	charX = width / 2;
@@ -707,8 +732,8 @@ function startGame()
 		{x_pos: 1450, y_pos: 330, size: 30, isFound: false}
 	];
 
-	mountainsX = [100, 200, 860, 1050];
-	mountainsY = floorPos_y;
+	mountainX = [100, 200, 860, 1050];
+	mountainY = floorPos_y;
 
 	treesX = [-390, 60, 160, 550, 700, 900, 1300, 1450];
 	treesY = height / 2;
@@ -762,6 +787,7 @@ function startGame()
 	gameScore = 0;
 }
 
+// Function to draw the game character rendering
 function drawGameCharacter()
 {
 	// Jumping-left character
