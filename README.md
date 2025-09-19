@@ -18,7 +18,3 @@ A general overview of the project:
 - Designing and implementing a creative 2D game environment with animated character movement
 - Utilizing p5.js and JavaScript for real-time rendering to create a dynamic, side-scrolling world with interactive animations
 - Successfully delivering a functional game demo that showcases user experience and animation transitions
-
-A short demo is available in the files section. You can also see a preview as provided below:
-
-<img src='https://github.com/Kiana-Jafari/2D-Side-Scrolling-Video-Game/blob/main/scene.png' alt='Video Game Background'></img>
