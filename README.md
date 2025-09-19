@@ -1,6 +1,6 @@
 ### 2D Side-Scrolling Video Game
 
-Welcome to the 2D Side-Scrolling Game Project! 🎮 
+Welcome to the 2D Side-Scrolling Game Project!
 This project showcases a beginner-friendly game environment built with **HTML5 Canvas** and **p5.js**, an open-source JavaScript library.
 
 Here's what you can explore so far:
@@ -22,5 +22,3 @@ A general overview of the project:
 A short demo is available in the files section. You can also see a preview as provided below:
 
 <img src='https://github.com/Kiana-Jafari/2D-Side-Scrolling-Video-Game/blob/main/scene.png' alt='Video Game Background'></img>
-
-Feel free to explore the code, test the demo, and modify the environment to make it your own. Perfect for anyone interested in learning game development and gamification basics! 🚀
