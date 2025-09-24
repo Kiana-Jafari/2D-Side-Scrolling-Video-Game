@@ -20,4 +20,4 @@ A general overview of the project:
 - Successfully delivering a functional game demo that showcases user experience and animation transitions
 </br>
 View the demo of how to play the game!
-[One run of playing the game]('https://github.com/Kiana-Jafari/2D-Side-Scrolling-Video-Game/blob/81e710288c971b0025ad47e48d7e45bfc6be4810/Demo.gif')
+[One run of playing the game]("https://github.com/Kiana-Jafari/2D-Side-Scrolling-Video-Game/blob/81e710288c971b0025ad47e48d7e45bfc6be4810/Demo.gif")
